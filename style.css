@@ -8,6 +8,14 @@
 
 body{
     margin:0;
+    font-family:sans-serif;
+    background:#0b3d91;
+    color:white;
+    text-align:center;
+}
+
+body{
+    margin:0;
     font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", sans-serif;
     background: linear-gradient(#002a6b,#0b3d91);
     color:white;
@@ -41,4 +49,5 @@ p{
     border-radius:12px;
     font-weight:bold;
 }
+
 
