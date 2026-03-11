@@ -65,3 +65,19 @@ th{
     width:150px;
     font-weight:bold;
 }
+
+/* 年表 */
+
+.timeline{
+    width:60%;
+    margin:40px auto;
+}
+
+.event{
+    background:white;
+    color:#002a6b;
+    margin:20px;
+    padding:20px;
+    border-radius:10px;
+    font-weight:bold;
+}
