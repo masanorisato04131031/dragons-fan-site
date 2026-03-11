@@ -72,7 +72,7 @@ box-shadow:0 5px 10px rgba(0,0,0,0.5);
 
 }
 
-/* 選手 */
+/* 選手カード */
 
 .players{
 
@@ -108,7 +108,7 @@ border-radius:10px;
 
 }
 
-/* 詳細 */
+/* 落合博満詳細 */
 
 #ochiai-detail{
 
@@ -140,5 +140,16 @@ color:#002a6b;
 padding:20px;
 border-radius:10px;
 width:150px;
+
+}
+
+/* 順位グラフ（小さく中央表示） */
+
+#rankChart{
+
+width:400px;
+height:200px;
+display:block;
+margin:30px auto;
 
 }
