@@ -5,18 +5,26 @@ font-family:sans-serif;
 text-align:center;
 color:white;
 
+/* 背景画像 */
+
 background-image:url("images/746428599603f01dcc228c.jpg");
 background-size:cover;
+background-position:center;
 background-attachment:fixed;
 
 }
+
+/* タイトル */
 
 h1{
 
 background:#002a6b;
 padding:20px;
+margin:0;
 
 }
+
+/* 各エリア */
 
 section{
 
@@ -27,18 +35,42 @@ border-radius:10px;
 
 }
 
-.gallery img{
+/* 画像の基本設定（縦長防止） */
 
-width:400px;
-border-radius:10px;
+img{
+
+max-width:100%;
+height:auto;
 
 }
+
+/* ギャラリー */
+
+.gallery{
+
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+
+}
+
+.gallery img{
+
+width:350px;
+margin:10px;
+border-radius:10px;
+box-shadow:0 5px 10px rgba(0,0,0,0.5);
+
+}
+
+/* 選手カード */
 
 .players{
 
 display:flex;
 justify-content:center;
 gap:30px;
+flex-wrap:wrap;
 
 }
 
@@ -50,14 +82,27 @@ padding:20px;
 border-radius:10px;
 width:200px;
 cursor:pointer;
+transition:0.3s;
+
+}
+
+/* カードホバー */
+
+.card:hover{
+
+transform:scale(1.05);
 
 }
 
 .card img{
 
 width:150px;
+height:auto;
+border-radius:10px;
 
 }
+
+/* 詳細表示 */
 
 #ochiai-detail{
 
