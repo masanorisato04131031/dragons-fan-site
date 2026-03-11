@@ -1,91 +1,72 @@
 body{
-    margin:0;
-    font-family:"Segoe UI","Hiragino Kaku Gothic ProN",sans-serif;
-    background:linear-gradient(#002a6b,#0b3d91);
-    color:white;
-    text-align:center;
-}
 
-/* タイトル */
+margin:0;
+font-family:sans-serif;
+text-align:center;
+color:white;
+
+background-image:url("images/746428599603f01dcc228c.jpg");
+background-size:cover;
+background-attachment:fixed;
+
+}
 
 h1{
-    font-size:60px;
-    margin-top:60px;
-    letter-spacing:4px;
-    text-shadow:3px 3px 10px black;
+
+background:#002a6b;
+padding:20px;
+
 }
 
-/* サブタイトル */
+section{
 
-h2{
-    margin-top:50px;
+background:rgba(0,0,0,0.7);
+margin:40px;
+padding:30px;
+border-radius:10px;
+
 }
 
-/* 表 */
+.gallery img{
 
-table{
-    margin:auto;
-    border-collapse:collapse;
-    width:60%;
-    background:white;
-    color:black;
+width:400px;
+border-radius:10px;
+
 }
-
-th,td{
-    border:1px solid #ccc;
-    padding:10px;
-}
-
-th{
-    background:#002a6b;
-    color:white;
-}
-
-/* 日本一 */
-
-.win{
-    background:gold;
-    font-weight:bold;
-}
-
-/* 選手カード */
 
 .players{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    margin-top:30px;
+
+display:flex;
+justify-content:center;
+gap:30px;
+
 }
 
 .card{
-    background:white;
-    color:#002a6b;
-    padding:20px;
-    border-radius:10px;
-    width:150px;
-    font-weight:bold;
-}
 
-/* 年表 */
-
-.timeline{
-    width:60%;
-    margin:40px auto;
-}
-
-.event{
-    background:white;
-    color:#002a6b;
-    margin:20px;
-    padding:20px;
-    border-radius:10px;
-    font-weight:bold;
-}
-#ochiai-detail{
 background:white;
 color:#002a6b;
 padding:20px;
-margin:20px auto;
+border-radius:10px;
+width:200px;
+cursor:pointer;
+
+}
+
+.card img{
+
+width:150px;
+
+}
+
+#ochiai-detail{
+
+display:none;
+background:white;
+color:#002a6b;
+margin:30px auto;
+padding:20px;
 width:60%;
 border-radius:10px;
+
 }
