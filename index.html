@@ -1,107 +1,47 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
 <meta charset="UTF-8">
 <title>中日ドラゴンズファンサイト</title>
-
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
 <h1>🐉 中日ドラゴンズファンサイト</h1>
 
-<p>
-ドラゴンズの歴史と日本シリーズの記録
-</p>
+<section>
 
-<h2>🏆 日本シリーズ</h2>
+<h2>🏟 球場ギャラリー</h2>
 
-<table>
+<div class="gallery">
 
-<tr>
-<th>年</th>
-<th>相手</th>
-<th>結果</th>
-</tr>
+<img src="images/746428599603f01dcc228c.jpg">
 
-<tr class="win">
-<td>1954</td>
-<td>西鉄</td>
-<td>日本一</td>
-</tr>
+</div>
 
-<tr>
-<td>1974</td>
-<td>ロッテ</td>
-<td>敗退</td>
-</tr>
+</section>
 
-<tr>
-<td>1982</td>
-<td>西武</td>
-<td>敗退</td>
-</tr>
-
-<tr>
-<td>1988</td>
-<td>西武</td>
-<td>敗退</td>
-</tr>
-
-<tr>
-<td>1999</td>
-<td>ダイエー</td>
-<td>敗退</td>
-</tr>
-
-<tr>
-<td>2004</td>
-<td>西武</td>
-<td>敗退</td>
-</tr>
-
-<tr>
-<td>2006</td>
-<td>日本ハム</td>
-<td>敗退</td>
-</tr>
-
-<tr class="win">
-<td>2007</td>
-<td>日本ハム</td>
-<td>日本一</td>
-</tr>
-
-<tr>
-<td>2010</td>
-<td>ロッテ</td>
-<td>敗退</td>
-</tr>
-
-<tr>
-<td>2011</td>
-<td>ソフトバンク</td>
-<td>敗退</td>
-</tr>
-
-</table>
+<section>
 
 <h2>⭐ レジェンド選手</h2>
 
 <div class="players">
 
-<div class="card">
-<h2>⭐ レジェンド選手</h2>
+<div class="card" onclick="toggleOchiai()">
 
-<div class="card" onclick="showOchiai()">
-
-<img src="images/ochiai.jpg" width="150">
+<img src="images/746428599603f01dcc228c.jpg">
 
 <h3>落合博満</h3>
 
-<div id="ochiai-detail" style="display:none;">
+</div>
+
+</div>
+
+<div id="ochiai-detail">
+
+<h2>落合博満</h2>
 
 <p>
 三冠王を3回獲得した日本を代表する打者。<br>
@@ -117,56 +57,10 @@
 </ul>
 
 </div>
-</div>
 
-<div class="card">
-山本昌
-</div>
+</section>
 
-<div class="card">
-岩瀬仁紀
-</div>
+<script src="script.js"></script>
 
-</div>
-<h2>🐉 ドラゴンズの歴史</h2>
-
-<div class="timeline">
-
-<div class="event">
-<h3>1936</h3>
-<p>名古屋軍として球団誕生</p>
-</div>
-
-<div class="event">
-<h3>1954</h3>
-<p>球団初の日本一</p>
-</div>
-
-<div class="event">
-<h3>1974</h3>
-<p>20年ぶりリーグ優勝</p>
-</div>
-
-<div class="event">
-<h3>2007</h3>
-<p>53年ぶり日本一</p>
-</div>
-
-<div class="event">
-<h3>2011</h3>
-<p>リーグ優勝</p>
-</div>
-
-</div>
 </body>
-
-<h2>球場ギャラリー</h2>
-
-<img src="images/746428599603f01dcc228c.jpg" width="400">
-<img src="images/stadium2.jpg" width="400">
-<img src="images/stadium3.jpg" width="400">
-
-
-
-
-
+</html>
