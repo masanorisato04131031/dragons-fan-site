@@ -1,5 +1,4 @@
-console.log("Dragons Fan Site Loaded");
-function showOchiai(){
+function toggleOchiai(){
 
 var detail = document.getElementById("ochiai-detail");
 
