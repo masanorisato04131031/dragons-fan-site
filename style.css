@@ -5,16 +5,29 @@ font-family:sans-serif;
 text-align:center;
 color:white;
 
-/* 背景画像 */
-
-background-image:url("images/746428599603f01dcc228c.jpg");
 background-size:cover;
 background-position:center;
 background-attachment:fixed;
 
+animation:bgslide 20s infinite;
+
 }
 
-/* タイトル */
+@keyframes bgslide{
+
+0%{
+background-image:url("images/746428599603f01dcc228c.jpg");
+}
+
+50%{
+background-image:url("images/746428599603f01dcc228c.jpg");
+}
+
+100%{
+background-image:url("images/746428599603f01dcc228c.jpg");
+}
+
+}
 
 h1{
 
@@ -24,8 +37,6 @@ margin:0;
 
 }
 
-/* セクション */
-
 section{
 
 background:rgba(0,0,0,0.7);
@@ -34,8 +45,6 @@ padding:30px;
 border-radius:10px;
 
 }
-
-/* 画像の縦横比を保つ */
 
 img{
 
@@ -56,14 +65,14 @@ flex-wrap:wrap;
 
 .gallery img{
 
-width:350px;
+width:300px;
 margin:10px;
 border-radius:10px;
 box-shadow:0 5px 10px rgba(0,0,0,0.5);
 
 }
 
-/* 選手カード */
+/* 選手 */
 
 .players{
 
@@ -99,7 +108,7 @@ border-radius:10px;
 
 }
 
-/* 詳細表示 */
+/* 詳細 */
 
 #ochiai-detail{
 
@@ -110,5 +119,26 @@ margin:30px auto;
 padding:20px;
 width:60%;
 border-radius:10px;
+
+}
+
+/* 年表 */
+
+.timeline{
+
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+
+}
+
+.event{
+
+background:white;
+color:#002a6b;
+padding:20px;
+border-radius:10px;
+width:150px;
 
 }
