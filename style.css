@@ -5,27 +5,9 @@ font-family:sans-serif;
 text-align:center;
 color:white;
 
+background-image:url("images/746428599603f01dcc228c.jpg");
 background-size:cover;
-background-position:center;
 background-attachment:fixed;
-
-animation:bgslide 20s infinite;
-
-}
-
-@keyframes bgslide{
-
-0%{
-background-image:url("images/746428599603f01dcc228c.jpg");
-}
-
-50%{
-background-image:url("images/746428599603f01dcc228c.jpg");
-}
-
-100%{
-background-image:url("images/746428599603f01dcc228c.jpg");
-}
 
 }
 
@@ -68,11 +50,19 @@ flex-wrap:wrap;
 width:300px;
 margin:10px;
 border-radius:10px;
-box-shadow:0 5px 10px rgba(0,0,0,0.5);
 
 }
 
-/* 選手カード */
+/* スライドショー */
+
+#slide{
+
+width:400px;
+border-radius:10px;
+
+}
+
+/* 選手 */
 
 .players{
 
@@ -108,14 +98,14 @@ border-radius:10px;
 
 }
 
-/* 落合博満詳細 */
+/* 選手詳細 */
 
-#ochiai-detail{
+.player-detail{
 
 display:none;
 background:white;
 color:#002a6b;
-margin:30px auto;
+margin:20px auto;
 padding:20px;
 width:60%;
 border-radius:10px;
@@ -128,8 +118,8 @@ border-radius:10px;
 
 display:flex;
 justify-content:center;
-flex-wrap:wrap;
 gap:20px;
+flex-wrap:wrap;
 
 }
 
@@ -139,11 +129,11 @@ background:white;
 color:#002a6b;
 padding:20px;
 border-radius:10px;
-width:150px;
+width:120px;
 
 }
 
-/* 順位グラフ（小さく中央表示） */
+/* グラフ */
 
 #rankChart{
 
