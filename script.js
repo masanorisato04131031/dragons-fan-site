@@ -1,85 +1,27 @@
-function togglePlayer(id){
+const images = document.querySelectorAll(".gallery-img");
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modal-img");
+const closeBtn = document.getElementById("close");
 
-var players = document.querySelectorAll(".player-detail");
+images.forEach(img => {
 
-players.forEach(function(p){
+img.addEventListener("click", () => {
 
-p.style.display="none";
+modal.style.display = "flex";
+modalImg.src = img.src;
+
+});
 
 });
 
-var target = document.getElementById(id);
+closeBtn.onclick = () => {
 
-target.style.display="block";
+modal.style.display = "none";
 
-}
+};
 
+modal.onclick = () => {
 
-/* スライドショー */
+modal.style.display = "none";
 
-var images=[
-"images/746428599603f01dcc228c.jpg",
-"images/746428599603f01dcc228c.jpg",
-"images/746428599603f01dcc228c.jpg"
-];
-
-var num=0;
-
-function slideShow(){
-
-num++;
-
-if(num>=images.length){
-num=0;
-}
-
-document.getElementById("slide").src=images[num];
-
-}
-
-setInterval(slideShow,3000);
-
-
-/* 順位グラフ */
-
-const ctx=document.getElementById('rankChart');
-
-new Chart(ctx,{
-
-type:'line',
-
-data:{
-
-labels:['2018','2019','2020','2021','2022','2023'],
-
-datasets:[{
-
-label:'中日ドラゴンズ順位',
-
-data:[5,6,3,5,6,6],
-
-borderWidth:3
-
-}]
-
-},
-
-options:{
-
-scales:{
-
-y:{
-
-reverse:true,
-
-min:1,
-
-max:6
-
-}
-
-}
-
-}
-
-});
+};
