@@ -4,7 +4,11 @@
 <head>
 <meta charset="UTF-8">
 <title>中日ドラゴンズファンサイト</title>
+
 <link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body>
@@ -28,35 +32,73 @@
 
 <section>
 
+<h2>🎞 球場スライドショー</h2>
+
+<img id="slide" src="images/746428599603f01dcc228c.jpg">
+
+</section>
+
+
+<section>
+
 <h2>⭐ レジェンド選手</h2>
 
 <div class="players">
 
-<div class="card" onclick="toggleOchiai()">
+<div class="card" onclick="togglePlayer('ochiai')">
 <img src="images/746428599603f01dcc228c.jpg">
 <h3>落合博満</h3>
 </div>
 
+<div class="card" onclick="togglePlayer('tatsunami')">
+<img src="images/746428599603f01dcc228c.jpg">
+<h3>立浪和義</h3>
 </div>
 
-<div id="ochiai-detail">
-
-<h2>落合博満</h2>
-
-<p>
-三冠王を3回獲得した日本球界を代表する打者。<br>
-中日ドラゴンズでは監督としても活躍。
-</p>
-
-<ul>
-<li>生年月日：1953年12月9日</li>
-<li>三冠王：1982 / 1985 / 1986</li>
-<li>監督：2004〜2011</li>
-<li>リーグ優勝：4回</li>
-<li>日本一：2007</li>
-</ul>
+<div class="card" onclick="togglePlayer('yamamoto')">
+<img src="images/746428599603f01dcc228c.jpg">
+<h3>山本昌</h3>
+</div>
 
 </div>
+
+<div class="player-detail" id="ochiai">
+
+<h3>落合博満</h3>
+
+三冠王を3回獲得した伝説の打者  
+中日ドラゴンズ監督として日本一達成
+
+</div>
+
+
+<div class="player-detail" id="tatsunami">
+
+<h3>立浪和義</h3>
+
+ミスタードラゴンズ  
+通算2480安打
+
+</div>
+
+
+<div class="player-detail" id="yamamoto">
+
+<h3>山本昌</h3>
+
+通算219勝  
+50歳まで現役
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2>📊 ドラゴンズ順位グラフ</h2>
+
+<canvas id="rankChart"></canvas>
 
 </section>
 
@@ -68,42 +110,31 @@
 <div class="timeline">
 
 <div class="event">
-<h3>1936</h3>
-<p>名古屋軍として球団誕生</p>
+1936<br>
+名古屋軍誕生
 </div>
 
 <div class="event">
-<h3>1954</h3>
-<p>球団初の日本一</p>
+1954<br>
+初の日本一
 </div>
 
 <div class="event">
-<h3>1974</h3>
-<p>リーグ優勝</p>
+1974<br>
+リーグ優勝
 </div>
 
 <div class="event">
-<h3>2007</h3>
-<p>53年ぶり日本一</p>
+2007<br>
+53年ぶり日本一
 </div>
 
 <div class="event">
-<h3>2011</h3>
-<p>リーグ優勝</p>
+2011<br>
+リーグ優勝
 </div>
 
 </div>
-
-</section>
-
-
-<section>
-
-<h2>📊 ドラゴンズ順位グラフ</h2>
-
-<canvas id="rankChart" width="400" height="200"></canvas>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </section>
 
@@ -112,4 +143,3 @@
 
 </body>
 </html>
-
