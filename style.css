@@ -81,3 +81,11 @@ th{
     border-radius:10px;
     font-weight:bold;
 }
+#ochiai-detail{
+background:white;
+color:#002a6b;
+padding:20px;
+margin:20px auto;
+width:60%;
+border-radius:10px;
+}
