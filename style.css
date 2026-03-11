@@ -24,7 +24,7 @@ margin:0;
 
 }
 
-/* 各エリア */
+/* セクション */
 
 section{
 
@@ -35,7 +35,7 @@ border-radius:10px;
 
 }
 
-/* 画像の基本設定（縦長防止） */
+/* 画像の縦横比を保つ */
 
 img{
 
@@ -86,8 +86,6 @@ transition:0.3s;
 
 }
 
-/* カードホバー */
-
 .card:hover{
 
 transform:scale(1.05);
@@ -97,7 +95,6 @@ transform:scale(1.05);
 .card img{
 
 width:150px;
-height:auto;
 border-radius:10px;
 
 }
