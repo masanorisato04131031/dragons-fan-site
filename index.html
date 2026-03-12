@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+
 <meta charset="UTF-8">
 <title>中日ドラゴンズ応援サイト</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -71,7 +72,6 @@
 
 
 
-
 <section id="games">
 
 <h2>最近の試合</h2>
@@ -79,27 +79,21 @@
 <table>
 
 <tr>
-
 <th>日付</th>
 <th>対戦</th>
 <th>結果</th>
-
 </tr>
 
 <tr>
-
 <td>4/1</td>
 <td>vs 巨人</td>
 <td>○ 4-2</td>
-
 </tr>
 
 <tr>
-
 <td>4/2</td>
 <td>vs 巨人</td>
 <td>● 1-3</td>
-
 </tr>
 
 </table>
@@ -111,6 +105,8 @@
 <section id="players">
 
 <h2>選手名鑑</h2>
+
+<div class="players">
 
 <div class="player" onclick="openTakahashi()">
 
@@ -136,7 +132,7 @@
 
 <div class="player">
 
-<img src="okabayashi.jpg">
+<img src="https://picsum.photos/200?1">
 
 <h3>岡林勇希</h3>
 
@@ -147,7 +143,7 @@
 
 <div class="player">
 
-<img src="ishikawa.jpg">
+<img src="https://picsum.photos/200?2">
 
 <h3>石川昂弥</h3>
 
@@ -184,9 +180,7 @@
 <h2>試合ハイライト</h2>
 
 <iframe width="560" height="315"
-
 src="https://www.youtube.com/embed/1nX0G3nZ1oE"
-
 allowfullscreen>
 
 </iframe>
@@ -211,9 +205,9 @@ allowfullscreen>
 
 </footer>
 
-<script src="script.js"></script>
 
-<!-- 高橋宏斗 成績モーダル -->
+
+<!-- 高橋宏斗成績ポップアップ -->
 
 <div id="takahashiModal" class="modal">
 
@@ -221,7 +215,7 @@ allowfullscreen>
 
 <span class="close" onclick="closeTakahashi()">&times;</span>
 
-<h2>高橋宏斗　プロ成績</h2>
+<h2>高橋宏斗 プロ成績</h2>
 
 <table>
 
@@ -261,9 +255,11 @@ allowfullscreen>
 
 </div>
 
-</div>  
+</div>
+
+
+
+<script src="script.js"></script>
+
 </body>
-
 </html>
-
-
