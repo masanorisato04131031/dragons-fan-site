@@ -1,6 +1,6 @@
 const images=[
 
-"./stadium.jpg"
+"./stadium.jpg.jpg
 
 ]
 
@@ -15,3 +15,4 @@ slide.src=images[current]
 }
 
 changeSlide()
+
