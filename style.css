@@ -153,3 +153,11 @@ font-size:28px;
 cursor:pointer;
 
 }
+/* 試合ハイライト動画 */
+.highlight-video {
+  width: 100%;
+  max-width: 800px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 8px;
+}
