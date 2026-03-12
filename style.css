@@ -161,3 +161,10 @@ cursor:pointer;
   margin: 20px auto;
   border-radius: 8px;
 }
+
+#team-performance canvas {
+  width: 50%;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto;
+}
