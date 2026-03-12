@@ -1,119 +1,122 @@
 body{
-
-font-family:Arial, sans-serif;
+font-family: Arial;
 margin:0;
-background:#f4f6fb;
-
+background:#f4f4f4;
 }
 
 header{
-
+display:flex;
+justify-content:space-between;
+align-items:center;
 background:#0046ad;
 color:white;
-text-align:center;
-padding:30px;
-
+padding:15px 40px;
 }
 
-nav{
+.logo{
+font-size:24px;
+font-weight:bold;
+}
 
-background:#222;
+nav ul{
 display:flex;
-justify-content:center;
+list-style:none;
+}
 
+nav li{
+margin-left:20px;
 }
 
 nav a{
-
 color:white;
 text-decoration:none;
-padding:15px 20px;
-
+font-weight:bold;
 }
 
-nav a:hover{
 
-background:#444;
-
+.hero{
+height:400px;
+background:url("https://picsum.photos/1200/400") center/cover;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:white;
+text-shadow:2px 2px 5px black;
 }
+
 
 section{
-
-padding:60px 20px;
-text-align:center;
-
+padding:60px 10%;
+background:white;
+margin-bottom:10px;
 }
 
 h2{
-
-margin-bottom:30px;
-
+text-align:center;
+margin-bottom:40px;
 }
 
-.gallery{
 
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+.news-container{
+display:flex;
 gap:20px;
-max-width:900px;
-margin:auto;
+}
 
+.news-card{
+background:#eee;
+padding:20px;
+border-radius:10px;
+flex:1;
+}
+
+
+.players-container{
+display:flex;
+gap:30px;
+justify-content:center;
+}
+
+.player{
+text-align:center;
+}
+
+.player img{
+border-radius:50%;
+}
+
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+border:1px solid #ccc;
+padding:10px;
+text-align:center;
+}
+
+th{
+background:#0046ad;
+color:white;
+}
+
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
 }
 
 .gallery img{
-
 width:100%;
-height:250px;
-object-fit:cover;
-border-radius:10px;
-cursor:pointer;
-transition:0.3s;
-
 }
 
-.gallery img:hover{
-
-transform:scale(1.05);
-
-}
-
-#modal{
-
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-justify-content:center;
-align-items:center;
-
-}
-
-#modal img{
-
-max-width:80%;
-max-height:80%;
-
-}
-
-#close{
-
-position:absolute;
-top:30px;
-right:40px;
-font-size:40px;
-color:white;
-cursor:pointer;
-
-}
 
 footer{
-
 background:#222;
 color:white;
 text-align:center;
 padding:20px;
-
 }
