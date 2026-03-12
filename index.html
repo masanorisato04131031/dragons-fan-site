@@ -261,5 +261,22 @@ allowfullscreen>
 
 <script src="script.js"></script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const highlightsSection = document.querySelector('#highlights');
+      if (highlightsSection) {
+        const video = document.createElement('video');
+        video.src = 'videos/videoplayback.mp4';
+        video.controls = true;
+        video.style.width = '100%';
+        video.style.maxWidth = '800px';
+        video.style.display = 'block';
+        video.style.margin = '20px auto';
+        video.style.borderRadius = '8px';
+        highlightsSection.appendChild(video);
+      }
+    });
+  </script>  
 </body>
 </html>
+
