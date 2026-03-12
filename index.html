@@ -128,7 +128,7 @@
 
 <div class="player">
 
-<img src="yanagi.jpeg">
+<img src="yanagi.jpg" alt="柳裕也" onclick="showPlayer('yanagi')">
 
 <h3>柳裕也</h3>
 
@@ -139,7 +139,7 @@
 
 <div class="player">
 
-<img src="okabayashi.jpg">
+<img src="yanagi.jpg" alt="柳裕也" onclick="showPlayer('yanagi')">
 
 <h3>岡林勇希</h3>
 
@@ -150,7 +150,7 @@
 
 <div class="player">
 
-<img src="ishikawa.jpg">
+<img src="ishikawa.jpg" alt="石川昂弥" onclick="showPlayer('ishikawa')">
 
 <h3>石川昂弥</h3>
 
@@ -296,8 +296,19 @@ slides[slideIndex].classList.add("active");
 setInterval(showSlide,5000);
 
 </script>
+
+<div id="player-modal" class="modal">
+<div class="modal-content">
+
+<span class="close" onclick="closePlayer()">&times;</span>
+
+<div id="player-info"></div>
+
+</div>
+</div>
 </body>
 </html>
+
 
 
 
