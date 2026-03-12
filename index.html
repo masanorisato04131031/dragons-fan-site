@@ -285,31 +285,6 @@ slide.classList.remove("active");
 
 slideIndex++;
 
-if(slideIndex > slides.length){
-slideIndex = 1;
-}
-
-slides[slideIndex-1].classList.add("active");
-
-}
-
-setInterval(showSlide,5000);
-
-</script>
-
-<script>
-
-let slideIndex = 0;
-const slides = document.querySelectorAll(".slide");
-
-function showSlide(){
-
-slides.forEach((slide)=>{
-slide.classList.remove("active");
-});
-
-slideIndex++;
-
 if(slideIndex >= slides.length){
 slideIndex = 0;
 }
@@ -323,6 +298,7 @@ setInterval(showSlide,5000);
 </script>
 </body>
 </html>
+
 
 
 
