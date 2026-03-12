@@ -112,9 +112,7 @@
 
 <h2>選手名鑑</h2>
 
-<div class="players">
-
-<div class="player">
+<div class="player" onclick="openTakahashi()">
 
 <img src="takahashi.jpeg">
 
@@ -215,7 +213,57 @@ allowfullscreen>
 
 <script src="script.js"></script>
 
+<!-- 高橋宏斗 成績モーダル -->
+
+<div id="takahashiModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeTakahashi()">&times;</span>
+
+<h2>高橋宏斗　プロ成績</h2>
+
+<table>
+
+<tr>
+<th>年</th>
+<th>登板</th>
+<th>勝利</th>
+<th>敗戦</th>
+<th>防御率</th>
+</tr>
+
+<tr>
+<td>2022</td>
+<td>19</td>
+<td>6</td>
+<td>7</td>
+<td>2.47</td>
+</tr>
+
+<tr>
+<td>2023</td>
+<td>25</td>
+<td>7</td>
+<td>11</td>
+<td>2.53</td>
+</tr>
+
+<tr>
+<td>2024</td>
+<td>21</td>
+<td>10</td>
+<td>5</td>
+<td>1.75</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>  
 </body>
 
 </html>
+
 
