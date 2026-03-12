@@ -1,8 +1,6 @@
 const images=[
 
-"https://picsum.photos/1200/400?1",
-"https://picsum.photos/1200/400?2",
-"https://picsum.photos/1200/400?3"
+stadium1.jpg
 
 ]
 
@@ -122,3 +120,4 @@ data:[10,18,28,40,55]
 }
 
 })
+
