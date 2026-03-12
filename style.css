@@ -186,3 +186,21 @@ canvas {
   display: block;
   margin: 20px auto;
 }
+
+.stadium-slider{
+position:relative;
+width:100%;
+max-width:1000px;
+margin:auto;
+overflow:hidden;
+}
+
+.slide{
+width:100%;
+display:none;
+border-radius:10px;
+}
+
+.slide.active{
+display:block;
+}
