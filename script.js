@@ -28,3 +28,15 @@ responsive:true
 }
 
 });
+
+function openTakahashi(){
+
+document.getElementById("takahashiModal").style.display = "block";
+
+}
+
+function closeTakahashi(){
+
+document.getElementById("takahashiModal").style.display = "none";
+
+}
