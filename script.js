@@ -1,6 +1,6 @@
 const images=[
 
-stadium1.jpg
+"stadium1.jpg"
 
 ]
 
@@ -120,4 +120,5 @@ data:[10,18,28,40,55]
 }
 
 })
+
 
