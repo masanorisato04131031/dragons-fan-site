@@ -363,8 +363,94 @@ document.getElementById("player-modal").style.display = "none";
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+function showPlayerCard(player){
+
+const data={
+
+takahashi:{
+name:"高橋宏斗",
+years:["2022","2023","2024"],
+stats:[2.47,2.35,1.80],
+table:`
+<tr><th>年</th><th>防御率</th></tr>
+<tr><td>2022</td><td>2.47</td></tr>
+<tr><td>2023</td><td>2.35</td></tr>
+<tr><td>2024</td><td>1.80</td></tr>
+`
+},
+
+yanagi:{
+name:"柳裕也",
+years:["2022","2023","2024"],
+stats:[3.64,2.44,3.10],
+table:`
+<tr><th>年</th><th>防御率</th></tr>
+<tr><td>2022</td><td>3.64</td></tr>
+<tr><td>2023</td><td>2.44</td></tr>
+<tr><td>2024</td><td>3.10</td></tr>
+`
+},
+
+okabayashi:{
+name:"岡林勇希",
+years:["2022","2023","2024"],
+stats:[161,163,150],
+table:`
+<tr><th>年</th><th>安打</th></tr>
+<tr><td>2022</td><td>161</td></tr>
+<tr><td>2023</td><td>163</td></tr>
+<tr><td>2024</td><td>150</td></tr>
+`
+},
+
+ishikawa:{
+name:"石川昂弥",
+years:["2022","2023","2024"],
+stats:[9,13,18],
+table:`
+<tr><th>年</th><th>本塁打</th></tr>
+<tr><td>2022</td><td>9</td></tr>
+<tr><td>2023</td><td>13</td></tr>
+<tr><td>2024</td><td>18</td></tr>
+`
+}
+
+};
+
+const p=data[player];
+
+document.getElementById("playerName").innerText=p.name;
+document.getElementById("playerStats").innerHTML=p.table;
+document.getElementById("playerCard").style.display="block";
+
+const ctx=document.getElementById("playerChart");
+
+new Chart(ctx,{
+type:"line",
+data:{
+labels:p.years,
+datasets:[{
+label:"成績推移",
+data:p.stats,
+fill:false,
+borderWidth:3
+}]
+}
+});
+
+}
+
+function closeCard(){
+document.getElementById("playerCard").style.display="none";
+}
+
+</script>
 </body>
 </html>
+
 
 
 
