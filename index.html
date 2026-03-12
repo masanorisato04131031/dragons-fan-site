@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>中日ドラゴンズ応援サイト</title>
 
 <link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 
 
 <body>
 
+
 <header>
 
-<h1>🐉 DRAGONS FAN SITE</h1>
+<div class="logo">🐉 DRAGONS FAN SITE</div>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<nav id="menu">
+
+<ul>
+
+<li><a href="#news">NEWS</a></li>
+<li><a href="#rank">順位</a></li>
+<li><a href="#result">試合結果</a></li>
+<li><a href="#players">選手名鑑</a></li>
+<li><a href="#stadium">球場</a></li>
+<li><a href="#gallery">写真</a></li>
+<li><a href="#video">動画</a></li>
+<li><a href="#stats">チーム成績</a></li>
+
+</ul>
+
+</nav>
 
 </header>
 
@@ -29,11 +50,119 @@
 
 <div class="hero-text">
 
-<h2>中日ドラゴンズ応援サイト</h2>
-
+<h1>中日ドラゴンズ応援サイト</h1>
 <p>Dragons Fan Website</p>
 
 </div>
+
+</section>
+
+
+
+<section id="news">
+
+<h2>NEWS</h2>
+
+<div id="news-container"></div>
+
+</section>
+
+
+
+<section id="rank">
+
+<h2>セリーグ順位</h2>
+
+<table>
+
+<tr>
+<th>順位</th>
+<th>チーム</th>
+<th>勝</th>
+<th>敗</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>阪神</td>
+<td>70</td>
+<td>40</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>巨人</td>
+<td>65</td>
+<td>45</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>中日</td>
+<td>60</td>
+<td>50</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>広島</td>
+<td>55</td>
+<td>55</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>DeNA</td>
+<td>50</td>
+<td>60</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>ヤクルト</td>
+<td>45</td>
+<td>65</td>
+</tr>
+
+</table>
+
+<canvas id="rankChart"></canvas>
+
+</section>
+
+
+
+<section id="result">
+
+<h2>試合結果</h2>
+
+<table>
+
+<tr>
+<th>日付</th>
+<th>対戦</th>
+<th>結果</th>
+</tr>
+
+<tr>
+<td>4/1</td>
+<td>vs 巨人</td>
+<td>5-3 勝利</td>
+</tr>
+
+<tr>
+<td>4/3</td>
+<td>vs 阪神</td>
+<td>2-4 敗戦</td>
+</tr>
+
+<tr>
+<td>4/5</td>
+<td>vs DeNA</td>
+<td>6-2 勝利</td>
+</tr>
+
+</table>
 
 </section>
 
@@ -44,6 +173,7 @@
 <h2>選手名鑑</h2>
 
 <div class="players">
+
 
 <div class="player">
 
@@ -77,7 +207,80 @@
 
 </div>
 
+
+<div class="player">
+
+<img src="https://picsum.photos/200?4">
+
+<h3>石川昂弥</h3>
+
+<p>内野手</p>
+
 </div>
+
+</div>
+
+</section>
+
+
+
+<section id="stadium">
+
+<h2>ホーム球場</h2>
+
+<img src="stadium.jpg" class="stadium-img">
+
+<p>
+
+バンテリンドームナゴヤ  
+中日ドラゴンズの本拠地球場です。
+
+</p>
+
+</section>
+
+
+
+<section id="gallery">
+
+<h2>フォトギャラリー</h2>
+
+<div class="gallery">
+
+<img src="stadium.jpg">
+<img src="https://picsum.photos/400?2">
+<img src="https://picsum.photos/400?3">
+<img src="https://picsum.photos/400?4">
+
+</div>
+
+</section>
+
+
+
+<section id="video">
+
+<h2>試合ハイライト</h2>
+
+<div class="videos">
+
+<iframe width="400" height="225"
+src="https://www.youtube.com/embed/Y2XJqQ5ZJ0s"></iframe>
+
+<iframe width="400" height="225"
+src="https://www.youtube.com/embed/Bey4XXJAqS8"></iframe>
+
+</div>
+
+</section>
+
+
+
+<section id="stats">
+
+<h2>チーム成績</h2>
+
+<canvas id="statsChart"></canvas>
 
 </section>
 
@@ -92,5 +295,4 @@
 <script src="script.js"></script>
 
 </body>
-
 </html>
