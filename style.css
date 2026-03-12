@@ -196,24 +196,6 @@ overflow:hidden;
 }
 
 .slide{
-width:100%;
-display:none;
-border-radius:10px;
-}
-
-.slide.active{
-display:block;
-}
-
-.stadium-slider{
-position:relative;
-width:100%;
-max-width:1000px;
-margin:auto;
-overflow:hidden;
-}
-
-.slide{
 position:absolute;
 width:100%;
 opacity:0;
@@ -225,3 +207,4 @@ border-radius:10px;
 opacity:1;
 position:relative;
 }
+
