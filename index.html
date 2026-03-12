@@ -306,8 +306,49 @@ setInterval(showSlide,5000);
 
 </div>
 </div>
+
+<script>
+
+function showPlayer(player){
+
+const info = {
+
+yanagi: `
+<h3>柳裕也</h3>
+<p>通算勝利：70勝</p>
+<p>防御率：3.30</p>
+<p>奪三振：800</p>
+`,
+
+okabayashi: `
+<h3>岡林勇希</h3>
+<p>通算安打：400</p>
+<p>打率：.285</p>
+<p>盗塁：60</p>
+`,
+
+ishikawa: `
+<h3>石川昂弥</h3>
+<p>通算本塁打：35</p>
+<p>打率：.255</p>
+<p>打点：120</p>
+`
+
+};
+
+document.getElementById("player-info").innerHTML = info[player];
+document.getElementById("player-modal").style.display = "block";
+
+}
+
+function closePlayer(){
+document.getElementById("player-modal").style.display = "none";
+}
+
+</script>
 </body>
 </html>
+
 
 
 
