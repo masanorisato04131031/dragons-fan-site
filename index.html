@@ -2,165 +2,149 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>中日ドラゴンズファンサイト</title>
-
-<style>
-
-body{
-font-family:Arial, Helvetica, sans-serif;
-margin:0;
-background:#f4f4f4;
-}
-
-header{
-background:#0046ad;
-color:white;
-text-align:center;
-padding:20px;
-}
-
-nav{
-background:#222;
-text-align:center;
-padding:10px;
-}
-
-nav a{
-color:white;
-margin:0 15px;
-text-decoration:none;
-font-weight:bold;
-}
-
-section{
-padding:40px;
-text-align:center;
-}
-
-h2{
-margin-bottom:30px;
-}
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-max-width:900px;
-margin:auto;
-}
-
-.gallery img{
-width:100%;
-height:250px;
-object-fit:cover;
-border-radius:10px;
-cursor:pointer;
-transition:0.3s;
-}
-
-.gallery img:hover{
-transform:scale(1.05);
-}
-
-#modal{
-display:none;
-position:fixed;
-z-index:1000;
-left:0;
-top:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.8);
-justify-content:center;
-align-items:center;
-}
-
-#modal img{
-max-width:80%;
-max-height:80%;
-}
-
-#close{
-position:absolute;
-top:30px;
-right:50px;
-font-size:40px;
-color:white;
-cursor:pointer;
-}
-
-footer{
-background:#222;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:40px;
-}
-
-</style>
-
+<title>中日ドラゴンズ ファンサイト</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-<h1>中日ドラゴンズファンサイト</h1>
-<p>Dragons Fan Site</p>
-</header>
+<div class="logo">DRAGONS FAN SITE</div>
 
 <nav>
-<a href="#">ホーム</a>
-<a href="#">選手</a>
-<a href="#">試合</a>
-<a href="#">球場</a>
+<ul>
+<li><a href="#news">NEWS</a></li>
+<li><a href="#players">PLAYERS</a></li>
+<li><a href="#schedule">SCHEDULE</a></li>
+<li><a href="#gallery">GALLERY</a></li>
+</ul>
 </nav>
+</header>
 
-<section>
 
-<h2>球場ギャラリー</h2>
+<section class="hero">
+<h1>中日ドラゴンズ応援サイト</h1>
+<p>Dragons Fan Website</p>
+</section>
 
-<div class="gallery">
 
-<img src="images.jpeg" class="gallery-img">
-<img src="images%20(1).jpeg" class="gallery-img">
-<img src="images%20(2).jpeg" class="gallery-img">
+<section id="news">
+
+<h2>NEWS</h2>
+
+<div class="news-container">
+
+<div class="news-card">
+<h3>2026シーズン開幕</h3>
+<p>ドラゴンズの新シーズンがスタートしました。</p>
+</div>
+
+<div class="news-card">
+<h3>新人選手入団</h3>
+<p>期待の新人選手がチームに加入。</p>
+</div>
+
+<div class="news-card">
+<h3>ホームゲーム開催</h3>
+<p>バンテリンドームでのホームゲーム開催。</p>
+</div>
 
 </div>
 
 </section>
 
-<div id="modal">
-<span id="close">&times;</span>
-<img id="modal-img">
+
+
+<section id="players">
+
+<h2>PLAYERS</h2>
+
+<div class="players-container">
+
+<div class="player">
+<img src="https://picsum.photos/200/200?1">
+<h3>#1 Player</h3>
+<p>投手</p>
 </div>
 
+<div class="player">
+<img src="https://picsum.photos/200/200?2">
+<h3>#2 Player</h3>
+<p>内野手</p>
+</div>
+
+<div class="player">
+<img src="https://picsum.photos/200/200?3">
+<h3>#3 Player</h3>
+<p>外野手</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="schedule">
+
+<h2>SCHEDULE</h2>
+
+<table>
+
+<tr>
+<th>日付</th>
+<th>対戦</th>
+<th>球場</th>
+</tr>
+
+<tr>
+<td>4/1</td>
+<td>vs Giants</td>
+<td>バンテリンドーム</td>
+</tr>
+
+<tr>
+<td>4/3</td>
+<td>vs Tigers</td>
+<td>甲子園</td>
+</tr>
+
+<tr>
+<td>4/5</td>
+<td>vs BayStars</td>
+<td>横浜スタジアム</td>
+</tr>
+
+</table>
+
+</section>
+
+
+
+<section id="gallery">
+
+<h2>PHOTO GALLERY</h2>
+
+<div class="gallery">
+
+<img src="https://picsum.photos/300/200?4">
+<img src="https://picsum.photos/300/200?5">
+<img src="https://picsum.photos/300/200?6">
+<img src="https://picsum.photos/300/200?7">
+
+</div>
+
+</section>
+
+
+
 <footer>
+
 <p>© Dragons Fan Site</p>
+
 </footer>
 
-<script>
-
-const images = document.querySelectorAll(".gallery-img");
-const modal = document.getElementById("modal");
-const modalImg = document.getElementById("modal-img");
-const closeBtn = document.getElementById("close");
-
-images.forEach(img=>{
-img.addEventListener("click",()=>{
-modal.style.display="flex";
-modalImg.src=img.src;
-});
-});
-
-closeBtn.onclick=()=>{
-modal.style.display="none";
-};
-
-modal.onclick=()=>{
-modal.style.display="none";
-};
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
