@@ -274,3 +274,15 @@ padding:6px;
 canvas{
 margin-top:20px;
 }
+
+.players {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 横4人 */
+  gap: 20px;
+  justify-items: center;
+}
+
+.player-card {
+  width: 200px;
+  text-align: center;
+}
