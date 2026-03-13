@@ -1,160 +1,39 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
 
 <meta charset="UTF-8">
 <title>中日ドラゴンズ応援サイト</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<link rel="stylesheet" href="style.css">
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
 
-body{
-font-family:Arial;
-margin:0;
-background:#f4f4f4;
-}
+/* 選手名鑑 横4人表示 */
 
-header{
-background:#0046ad;
-color:white;
-text-align:center;
-padding:20px;
-}
-
-nav ul{
-display:flex;
-justify-content:center;
-gap:20px;
-list-style:none;
-padding:0;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-font-weight:bold;
-}
-
-section{
-padding:40px;
-}
-
-h2{
-text-align:center;
-margin-bottom:30px;
-}
-
-/* 球場スライド */
-
-<section>
-
-<div class="slider">
-
-<img class="slide active" src="stadium1.jpg">
-<img class="slide" src="stadium2.jpg">
-<img class="slide" src="stadium3.jpg">
-
-</div>
-
-</section>
-/* NEWS */
-
-.news{
-display:flex;
-gap:20px;
-justify-content:center;
-flex-wrap:wrap;
-}
-
-.news-card{
-background:white;
-padding:20px;
-border-radius:10px;
-width:250px;
-}
-
-/* 試合 */
-
-table{
-width:90%;
-margin:auto;
-border-collapse:collapse;
-}
-
-th,td{
-border:1px solid #ccc;
-padding:8px;
-text-align:center;
-}
-
-/* 選手 */
-
-.players{
+.player-grid{
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:20px;
-max-width:1000px;
-margin:auto;
+margin-top:20px;
 }
 
-.player{
+.player-card{
 text-align:center;
 cursor:pointer;
 }
 
-.player img{
+.player-card img{
 width:100%;
 border-radius:10px;
-}
-
-/* モーダル */
-
-.modal{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.7);
-}
-
-.modal-content{
-background:white;
-width:90%;
-max-width:600px;
-margin:80px auto;
-padding:20px;
-border-radius:10px;
-}
-
-.close{
-float:right;
-font-size:28px;
-cursor:pointer;
-}
-
-canvas{
-max-width:800px;
-margin:40px auto;
-display:block;
-}
-
-footer{
-background:#222;
-color:white;
-text-align:center;
-padding:20px;
 }
 
 </style>
 
 </head>
-
-
 
 <body>
 
@@ -164,38 +43,32 @@ padding:20px;
 
 <nav>
 <ul>
-
 <li><a href="#news">NEWS</a></li>
 <li><a href="#games">試合</a></li>
-<li><a href="#players">選手</a></li>
+<li><a href="#players">選手名鑑</a></li>
 <li><a href="#stadium">球場</a></li>
 <li><a href="#video">動画</a></li>
 <li><a href="#stats">チーム成績</a></li>
-
 </ul>
 </nav>
 
 </header>
 
 
+<section class="hero">
 
-<!-- 球場スライド -->
-
-<section>
-
-<div class="slider">
+<div class="stadium-slider">
 
 <img class="slide active" src="stadium1.jpg">
 <img class="slide" src="stadium2.jpg">
 <img class="slide" src="stadium3.jpg">
+<img class="slide" src="stadium4.jpg">
 
 </div>
 
 </section>
 
 
-
-<!-- NEWS -->
 
 <section id="news">
 
@@ -204,13 +77,13 @@ padding:20px;
 <div class="news">
 
 <div class="news-card">
-<h3>開幕戦勝利</h3>
+<h3>開幕戦勝利！</h3>
 <p>ドラゴンズが開幕戦で見事勝利。</p>
 </div>
 
 <div class="news-card">
 <h3>高橋宏斗好投</h3>
-<p>エースが7回無失点。</p>
+<p>エースが7回無失点の好投。</p>
 </div>
 
 </div>
@@ -218,8 +91,6 @@ padding:20px;
 </section>
 
 
-
-<!-- 最近の試合 -->
 
 <section id="games">
 
@@ -236,13 +107,13 @@ padding:20px;
 <tr>
 <td>4/1</td>
 <td>vs 巨人</td>
-<td>○4-2</td>
+<td>○ 4-2</td>
 </tr>
 
 <tr>
 <td>4/2</td>
 <td>vs 巨人</td>
-<td>●1-3</td>
+<td>● 1-3</td>
 </tr>
 
 </table>
@@ -251,30 +122,28 @@ padding:20px;
 
 
 
-<!-- 選手 -->
-
 <section id="players">
 
 <h2>選手名鑑</h2>
 
-<div class="players">
+<div class="player-grid">
 
-<div class="player" onclick="showPlayer('takahashi')">
+<div class="player-card" onclick="showPlayerCard('takahashi')">
 <img src="takahashi.jpg">
 <p>高橋宏斗</p>
 </div>
 
-<div class="player" onclick="showPlayer('yanagi')">
+<div class="player-card" onclick="showPlayerCard('yanagi')">
 <img src="yanagi.jpg">
 <p>柳裕也</p>
 </div>
 
-<div class="player" onclick="showPlayer('okabayashi')">
+<div class="player-card" onclick="showPlayerCard('okabayashi')">
 <img src="okabayashi.jpg">
 <p>岡林勇希</p>
 </div>
 
-<div class="player" onclick="showPlayer('ishikawa')">
+<div class="player-card" onclick="showPlayerCard('ishikawa')">
 <img src="ishikawa.jpg">
 <p>石川昂弥</p>
 </div>
@@ -285,145 +154,91 @@ padding:20px;
 
 
 
-<!-- 球場 -->
 
 <section id="stadium">
 
 <h2>バンテリンドームナゴヤ</h2>
 
-<img src="stadium.jpg" style="width:80%;display:block;margin:auto">
+<img src="stadium.jpg">
 
-<p style="text-align:center">
-中日ドラゴンズの本拠地球場
+<p>
+中日ドラゴンズの本拠地。  
+名古屋市にあるドーム球場。
 </p>
 
 </section>
 
 
 
-<!-- 動画 -->
-
 <section id="video">
 
-<h2>試合ハイライト</h2>
+<h2 style="text-align:center;margin-top:40px;">試合ハイライト</h2>
 
-<div style="text-align:center">
-
-<video width="800" controls>
-
+<video controls style="width:90%;max-width:800px;display:block;margin:20px auto;border-radius:10px;">
 <source src="videoplayback.mp4" type="video/mp4">
-
 </video>
-
-</div>
 
 </section>
 
 
 
-<!-- チーム成績 -->
-
 <section id="stats">
 
-<h2>チーム成績（過去10年）</h2>
-
-<canvas id="teamChart"></canvas>
-
-
-<h2>対戦成績</h2>
-
-<table>
-
-<tr>
-<th>対戦</th>
-<th>勝</th>
-<th>敗</th>
-</tr>
-
-<tr>
-<td>阪神</td>
-<td>10</td>
-<td>15</td>
-</tr>
-
-<tr>
-<td>巨人</td>
-<td>12</td>
-<td>13</td>
-</tr>
-
-<tr>
-<td>DeNA</td>
-<td>14</td>
-<td>11</td>
-</tr>
-
-<tr>
-<td>広島</td>
-<td>11</td>
-<td>14</td>
-</tr>
-
-<tr>
-<td>ヤクルト</td>
-<td>13</td>
-<td>12</td>
-</tr>
-
-</table>
+<h2>チーム成績</h2>
+<canvas id="statsChart"></canvas>
 
 </section>
 
 
 
 <footer>
-
 <p>© Dragons Fan Site</p>
-
 </footer>
 
 
 
-<!-- 選手ポップアップ -->
+<div id="playerCard" class="player-card">
+<div class="card-content">
 
-<div id="playerModal" class="modal">
-
-<div class="modal-content">
-
-<span class="close" onclick="closePlayer()">×</span>
+<span class="close-btn" onclick="closeCard()">×</span>
 
 <h2 id="playerName"></h2>
 
-<table id="playerTable"></table>
+<table id="playerStats"></table>
 
-<canvas id="playerGraph"></canvas>
+<canvas id="playerChart"></canvas>
 
 </div>
-
 </div>
 
 
 
 <script>
 
-/* 球場スライド */
-
 let slideIndex=0;
 const slides=document.querySelectorAll(".slide");
 
-setInterval(()=>{
-slides[slideIndex].classList.remove("active");
-slideIndex=(slideIndex+1)%slides.length;
+function showSlide(){
+
+slides.forEach((slide)=>{
+slide.classList.remove("active");
+});
+
+slideIndex++;
+
+if(slideIndex>=slides.length){
+slideIndex=0;
+}
+
 slides[slideIndex].classList.add("active");
-},3000);
+
+}
+
+setInterval(showSlide,5000);
 
 
 
-/* 選手データ */
-
-let chart;
-
-function showPlayer(player){
+function showPlayerCard(player){
 
 const data={
 
@@ -449,6 +264,30 @@ table:`
 <tr><td>2023</td><td>2.44</td></tr>
 <tr><td>2024</td><td>3.10</td></tr>
 `
+},
+
+okabayashi:{
+name:"岡林勇希",
+years:["2022","2023","2024"],
+stats:[161,163,150],
+table:`
+<tr><th>年</th><th>安打</th></tr>
+<tr><td>2022</td><td>161</td></tr>
+<tr><td>2023</td><td>163</td></tr>
+<tr><td>2024</td><td>150</td></tr>
+`
+},
+
+ishikawa:{
+name:"石川昂弥",
+years:["2022","2023","2024"],
+stats:[9,13,18],
+table:`
+<tr><th>年</th><th>本塁打</th></tr>
+<tr><td>2022</td><td>9</td></tr>
+<tr><td>2023</td><td>13</td></tr>
+<tr><td>2024</td><td>18</td></tr>
+`
 }
 
 };
@@ -456,58 +295,31 @@ table:`
 const p=data[player];
 
 document.getElementById("playerName").innerText=p.name;
-document.getElementById("playerTable").innerHTML=p.table;
+document.getElementById("playerStats").innerHTML=p.table;
+document.getElementById("playerCard").style.display="block";
 
-document.getElementById("playerModal").style.display="block";
+const ctx=document.getElementById("playerChart");
 
-if(chart){
-chart.destroy();
-}
-
-const ctx=document.getElementById("playerGraph");
-
-chart=new Chart(ctx,{
+new Chart(ctx,{
 type:"line",
 data:{
 labels:p.years,
 datasets:[{
-label:"成績",
-data:p.stats
+label:"成績推移",
+data:p.stats,
+fill:false,
+borderWidth:3
 }]
 }
 });
 
 }
 
-function closePlayer(){
-document.getElementById("playerModal").style.display="none";
+function closeCard(){
+document.getElementById("playerCard").style.display="none";
 }
-
-
-
-/* チームグラフ */
-
-const ctx=document.getElementById("teamChart");
-
-new Chart(ctx,{
-type:"bar",
-data:{
-labels:["2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],
-datasets:[
-{
-label:"勝利",
-data:[62,58,59,63,68,60,55,66,56,65]
-},
-{
-label:"敗北",
-data:[80,82,79,78,73,76,84,69,82,73]
-}
-]
-}
-});
 
 </script>
 
 </body>
 </html>
-
