@@ -271,3 +271,20 @@ padding:6px;
 canvas{
 margin-top:20px;
 }
+
+.player-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.player-card {
+  text-align: center;
+}
+
+.player-card img {
+  width: 100%;
+  border-radius: 10px;
+}
