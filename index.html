@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
 
 <meta charset="UTF-8">
@@ -43,19 +44,25 @@ padding:40px;
 
 h2{
 text-align:center;
+margin-bottom:30px;
 }
 
-/* スライド */
+/* 球場スライド */
 
 .slider{
-width:90%;
 max-width:900px;
 margin:auto;
+position:relative;
 }
 
-.slider img{
+.slide{
+display:none;
 width:100%;
 border-radius:10px;
+}
+
+.active{
+display:block;
 }
 
 /* NEWS */
@@ -64,6 +71,7 @@ border-radius:10px;
 display:flex;
 gap:20px;
 justify-content:center;
+flex-wrap:wrap;
 }
 
 .news-card{
@@ -152,8 +160,8 @@ padding:20px;
 </head>
 
 
-<body>
 
+<body>
 
 <header>
 
@@ -175,19 +183,21 @@ padding:20px;
 </header>
 
 
-<!-- 球場 -->
+
+<!-- 球場スライド -->
 
 <section>
 
 <div class="slider">
 
-<img src="stadium1.jpg">
-<img src="stadium2.jpg">
-<img src="stadium3.jpg">
+<img class="slide active" src="stadium1.jpg">
+<img class="slide" src="stadium2.jpg">
+<img class="slide" src="stadium3.jpg">
 
 </div>
 
 </section>
+
 
 
 <!-- NEWS -->
@@ -213,7 +223,8 @@ padding:20px;
 </section>
 
 
-<!-- 試合 -->
+
+<!-- 最近の試合 -->
 
 <section id="games">
 
@@ -242,6 +253,7 @@ padding:20px;
 </table>
 
 </section>
+
 
 
 <!-- 選手 -->
@@ -277,6 +289,7 @@ padding:20px;
 </section>
 
 
+
 <!-- 球場 -->
 
 <section id="stadium">
@@ -290,6 +303,7 @@ padding:20px;
 </p>
 
 </section>
+
 
 
 <!-- 動画 -->
@@ -309,6 +323,7 @@ padding:20px;
 </div>
 
 </section>
+
 
 
 <!-- チーム成績 -->
@@ -365,6 +380,7 @@ padding:20px;
 </section>
 
 
+
 <footer>
 
 <p>© Dragons Fan Site</p>
@@ -372,7 +388,8 @@ padding:20px;
 </footer>
 
 
-<!-- 選手モーダル -->
+
+<!-- 選手ポップアップ -->
 
 <div id="playerModal" class="modal">
 
@@ -393,6 +410,21 @@ padding:20px;
 
 
 <script>
+
+/* 球場スライド */
+
+let slideIndex=0;
+const slides=document.querySelectorAll(".slide");
+
+setInterval(()=>{
+slides[slideIndex].classList.remove("active");
+slideIndex=(slideIndex+1)%slides.length;
+slides[slideIndex].classList.add("active");
+},3000);
+
+
+
+/* 選手データ */
 
 let chart;
 
@@ -457,6 +489,7 @@ document.getElementById("playerModal").style.display="none";
 }
 
 
+
 /* チームグラフ */
 
 const ctx=document.getElementById("teamChart");
@@ -479,7 +512,6 @@ data:[80,82,79,78,73,76,84,69,82,73]
 });
 
 </script>
-
 
 </body>
 </html>
