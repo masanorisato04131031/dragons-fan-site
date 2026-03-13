@@ -4,14 +4,11 @@
 
 <meta charset="UTF-8">
 <title>中日ドラゴンズファンサイト</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
-
-/* 全体 */
 
 body{
 margin:0;
@@ -27,8 +24,6 @@ margin-top:40px;
 section{
 padding:40px;
 }
-
-/* ヘッダー */
 
 header{
 background:#0046ad;
@@ -124,7 +119,7 @@ background:rgba(0,0,0,0.7);
 .modal-content{
 background:white;
 width:90%;
-max-width:600px;
+max-width:700px;
 margin:80px auto;
 padding:20px;
 border-radius:10px;
@@ -134,6 +129,20 @@ border-radius:10px;
 float:right;
 font-size:30px;
 cursor:pointer;
+}
+
+/* 成績表 */
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+th,td{
+border:1px solid #ccc;
+padding:8px;
+text-align:center;
 }
 
 /* 動画 */
@@ -147,8 +156,6 @@ width:80%;
 max-width:800px;
 border-radius:10px;
 }
-
-/* グラフ */
 
 canvas{
 max-width:800px;
@@ -181,7 +188,7 @@ display:block;
 
 
 
-<!-- トップスライド -->
+<!-- スライド -->
 
 <div class="slider">
 
@@ -202,17 +209,17 @@ display:block;
 <div class="news">
 
 <div class="news-card">
-<h3>高橋宏斗好投</h3>
-<p>7回無失点でチームを勝利に導く</p>
+<h3>高橋宏斗 好投</h3>
+<p>エースが7回無失点の好投</p>
 </div>
 
 <div class="news-card">
-<h3>岡林猛打賞</h3>
-<p>リードオフマンが打線を牽引</p>
+<h3>岡林 猛打賞</h3>
+<p>リードオフマンが3安打</p>
 </div>
 
 <div class="news-card">
-<h3>石川昂弥ホームラン</h3>
+<h3>石川昂弥 ホームラン</h3>
 <p>若き主砲が決勝弾</p>
 </div>
 
@@ -222,7 +229,7 @@ display:block;
 
 
 
-<!-- 選手 -->
+<!-- 選手名鑑 -->
 
 <section id="players">
 
@@ -256,7 +263,7 @@ display:block;
 
 
 
-<!-- ハイライト動画 -->
+<!-- ハイライト -->
 
 <section id="video">
 
@@ -288,7 +295,7 @@ display:block;
 
 
 
-<!-- 選手モーダル -->
+<!-- モーダル -->
 
 <div id="playerModal" class="modal">
 
@@ -330,47 +337,54 @@ slides[slideIndex].classList.add("active");
 
 
 
-/* 選手データ */
+/* 選手成績 */
 
 const players={
 
 takahashi:{
 name:"高橋宏斗",
 table:`
-<tr><th>年度</th><th>防御率</th></tr>
-<tr><td>2022</td><td>2.47</td></tr>
-<tr><td>2023</td><td>2.35</td></tr>
-<tr><td>2024</td><td>1.80</td></tr>
+<tr><th>年度</th><th>勝</th><th>敗</th><th>防御率</th></tr>
+<tr><td>2022</td><td>6</td><td>7</td><td>2.47</td></tr>
+<tr><td>2023</td><td>7</td><td>11</td><td>2.35</td></tr>
+<tr><td>2024</td><td>12</td><td>4</td><td>1.80</td></tr>
 `
 },
 
 yanagi:{
 name:"柳裕也",
 table:`
-<tr><th>年度</th><th>防御率</th></tr>
-<tr><td>2022</td><td>3.64</td></tr>
-<tr><td>2023</td><td>2.44</td></tr>
-<tr><td>2024</td><td>3.10</td></tr>
+<tr><th>年度</th><th>勝</th><th>敗</th><th>防御率</th></tr>
+<tr><td>2017</td><td>11</td><td>7</td><td>3.53</td></tr>
+<tr><td>2018</td><td>5</td><td>9</td><td>3.15</td></tr>
+<tr><td>2019</td><td>11</td><td>7</td><td>2.34</td></tr>
+<tr><td>2020</td><td>6</td><td>7</td><td>3.60</td></tr>
+<tr><td>2021</td><td>11</td><td>6</td><td>2.20</td></tr>
+<tr><td>2022</td><td>9</td><td>11</td><td>3.64</td></tr>
+<tr><td>2023</td><td>4</td><td>11</td><td>2.44</td></tr>
 `
 },
 
 okabayashi:{
 name:"岡林勇希",
 table:`
-<tr><th>年度</th><th>打率</th></tr>
-<tr><td>2022</td><td>.291</td></tr>
-<tr><td>2023</td><td>.279</td></tr>
-<tr><td>2024</td><td>.300</td></tr>
+<tr><th>年度</th><th>打率</th><th>打点</th><th>本塁打</th><th>盗塁</th></tr>
+<tr><td>2021</td><td>.257</td><td>35</td><td>0</td><td>24</td></tr>
+<tr><td>2022</td><td>.291</td><td>32</td><td>0</td><td>24</td></tr>
+<tr><td>2023</td><td>.279</td><td>31</td><td>3</td><td>12</td></tr>
+<tr><td>2024</td><td>.300</td><td>40</td><td>5</td><td>20</td></tr>
 `
 },
 
 ishikawa:{
 name:"石川昂弥",
 table:`
-<tr><th>年度</th><th>本塁打</th></tr>
-<tr><td>2022</td><td>5</td></tr>
-<tr><td>2023</td><td>13</td></tr>
-<tr><td>2024</td><td>20</td></tr>
+<tr><th>年度</th><th>打率</th><th>打点</th><th>本塁打</th><th>盗塁</th></tr>
+<tr><td>2020</td><td>.221</td><td>3</td><td>1</td><td>0</td></tr>
+<tr><td>2021</td><td>.242</td><td>17</td><td>5</td><td>1</td></tr>
+<tr><td>2022</td><td>.225</td><td>19</td><td>5</td><td>1</td></tr>
+<tr><td>2023</td><td>.242</td><td>45</td><td>13</td><td>2</td></tr>
+<tr><td>2024</td><td>.260</td><td>60</td><td>20</td><td>3</td></tr>
 `
 }
 
@@ -419,4 +433,3 @@ data:[80,82,79,78,73,76,84,69,82,73]
 
 </body>
 </html>
-
