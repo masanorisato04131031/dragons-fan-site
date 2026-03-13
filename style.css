@@ -289,3 +289,33 @@ margin-top:20px;
   border-radius: 10px;
 }
 
+
+/* 選手名鑑 */
+
+.players-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+max-width:1000px;
+margin:auto;
+}
+
+.player{
+text-align:center;
+cursor:pointer;
+}
+
+.player img{
+width:100%;
+border-radius:10px;
+transition:0.3s;
+}
+
+.player img:hover{
+transform:scale(1.05);
+}
+
+.player p{
+margin-top:8px;
+font-weight:bold;
+}
