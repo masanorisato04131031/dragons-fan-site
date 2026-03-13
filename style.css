@@ -7,7 +7,14 @@ background:#f4f4f4;
 }
 
 header{
+<div class="slider">
 
+<img class="slide active" src="stadium1.jpg">
+<img class="slide" src="stadium2.jpg">
+<img class="slide" src="stadium3.jpg">
+
+</div>
+  
 background:#003366;
 color:white;
 padding:20px;
@@ -336,5 +343,6 @@ transform:scale(1.05);
 margin-top:8px;
 font-weight:bold;
 }
+
 
 
