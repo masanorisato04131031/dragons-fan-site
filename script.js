@@ -430,3 +430,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
   renderCalendar();
 });
+
+document.addEventListener("DOMContentLoaded", function(){
+  renderCalendar();
+});
