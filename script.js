@@ -66,7 +66,6 @@ function showPlayer(name){
 /* =========================
   試合ハイライト動画（壊さない）
 ========================= */
-document.addEventListener("DOMContentLoaded", function(){
 
   const videos = document.querySelectorAll("video");
 
@@ -85,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function(){
   カレンダー（追加）
 ========================= */
 document.addEventListener("DOMContentLoaded", function(){
-
+const calendarBody = document.getElementById("calendarBody");
 
   /* =========================
   カレンダー（勝敗＋動画版）
