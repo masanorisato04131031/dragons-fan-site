@@ -87,26 +87,39 @@ document.addEventListener("DOMContentLoaded", function(){
 document.addEventListener("DOMContentLoaded", function(){
 
   const calendarBody = document.getElementById("calendarBody");
+  /* =========================
+  カレンダー（勝敗＋動画版）
+========================= */
+document.addEventListener("DOMContentLoaded", function(){
+
+  const calendarBody = document.getElementById("calendarBody");
   const monthTitle = document.getElementById("monthTitle");
   const prevBtn = document.getElementById("prevMonth");
   const nextBtn = document.getElementById("nextMonth");
 
-  // カレンダーが無いページは何もしない（超重要）
   if(!calendarBody || !monthTitle || !prevBtn || !nextBtn){
     console.log("カレンダー要素なし → スキップ");
     return;
   }
 
+  const video = document.getElementById("highlightVideo");
+  const source = document.getElementById("videoSource");
+
+  /* =========================
+    試合データ（勝敗＋動画）
+  ========================= */
   const games = {
-    "2026-03-27":"vs 広島",
-    "2026-03-28":"vs 広島",
-    "2026-03-29":"vs 広島",
-    "2026-03-31":"vs 巨人",
-    "2026-04-01":"vs 巨人",
-    "2026-04-02":"vs 巨人",
-    "2026-04-10":"vs 阪神",
-    "2026-04-11":"vs 阪神",
-    "2026-04-12":"vs 阪神"
+    "2026-03-27":{ opponent:"広島", result:"win",  video:"videos/game1.mp4" },
+    "2026-03-28":{ opponent:"広島", result:"lose", video:"videos/game2.mp4" },
+    "2026-03-29":{ opponent:"広島", result:"win",  video:"videos/game3.mp4" },
+
+    "2026-03-31":{ opponent:"巨人", result:"win",  video:"videos/game4.mp4" },
+    "2026-04-01":{ opponent:"巨人", result:"lose", video:"videos/game5.mp4" },
+    "2026-04-02":{ opponent:"巨人", result:"win",  video:"videos/game6.mp4" },
+
+    "2026-04-10":{ opponent:"阪神", result:"win",  video:"videos/game7.mp4" },
+    "2026-04-11":{ opponent:"阪神", result:"lose", video:"videos/game8.mp4" },
+    "2026-04-12":{ opponent:"阪神", result:"win",  video:"videos/game9.mp4" }
   };
 
   let currentMonth = 2;
@@ -146,7 +159,27 @@ document.addEventListener("DOMContentLoaded", function(){
           cell.innerHTML = "<strong>" + date + "</strong>";
 
           if(games[fullDate]){
-            cell.innerHTML += "<div class='game'>" + games[fullDate] + "</div>";
+
+            const game = games[fullDate;
+
+            let mark = "";
+            if(game.result === "win") mark = "〇";
+            if(game.result === "lose") mark = "●";
+            if(game.result === "draw") mark = "△";
+
+            const div = document.createElement("div");
+            div.className = "game " + game.result;
+            div.innerText = mark + " vs " + game.opponent;
+
+            div.onclick = function(){
+              if(video && source && game.video){
+                source.src = game.video;
+                video.load();
+                video.play();
+              }
+            };
+
+            cell.appendChild(div);
           }
 
           date++;
