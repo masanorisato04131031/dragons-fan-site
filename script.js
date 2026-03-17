@@ -351,3 +351,82 @@ const games = {
 "2026-09-05":"vs ",
 
 };
+
+/* =========================
+  カレンダー（追加）
+========================= */
+
+const games = {
+  "2026-03-27":"vs ヤクルト",
+  "2026-03-28":"vs ヤクルト",
+  "2026-03-29":"vs ヤクルト"
+};
+
+let currentMonth = 2;
+let currentYear = 2026;
+
+function renderCalendar(){
+  const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+  const lastDate = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+  const calendarBody = document.getElementById("calendarBody");
+  if(!calendarBody) return; // ← これ重要（他機能を壊さない）
+
+  calendarBody.innerHTML = "";
+
+  document.getElementById("monthTitle").innerText =
+    currentYear + "年 " + (currentMonth + 1) + "月";
+
+  let date = 1;
+
+  for(let i=0;i<6;i++){
+    const row = document.createElement("tr");
+
+    for(let j=0;j<7;j++){
+      const cell = document.createElement("td");
+
+      if(i===0 && j<firstDay){
+        cell.innerHTML="";
+      }else if(date>lastDate){
+        break;
+      }else{
+
+        const fullDate =
+          currentYear + "-" +
+          String(currentMonth+1).padStart(2,'0') + "-" +
+          String(date).padStart(2,'0');
+
+        cell.innerHTML = "<strong>" + date + "</strong>";
+
+        if(games[fullDate]){
+          cell.innerHTML += "<div class='game'>" + games[fullDate] + "</div>";
+        }
+
+        date++;
+      }
+
+      row.appendChild(cell);
+    }
+
+    calendarBody.appendChild(row);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+
+  if(document.getElementById("prevMonth")){
+    document.getElementById("prevMonth").onclick = function(){
+      currentMonth--;
+      renderCalendar();
+    };
+  }
+
+  if(document.getElementById("nextMonth")){
+    document.getElementById("nextMonth").onclick = function(){
+      currentMonth++;
+      renderCalendar();
+    };
+  }
+
+  renderCalendar();
+});
