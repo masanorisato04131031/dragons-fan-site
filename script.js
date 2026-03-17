@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
           if(games[fullDate]){
 
-            const game = games[fullDate;
+            const game = games[fullDate];
 
             let mark = "";
             if(game.result === "win") mark = "〇";
