@@ -359,51 +359,7 @@ display:block;
 
 
 
-<script>
 
-/* スライド */
-
-let slideIndex=0;
-
-const slides=document.querySelectorAll(".slide");
-
-setInterval(()=>{
-
-slides.forEach(s=>s.classList.remove("active"));
-
-slideIndex++;
-
-if(slideIndex>=slides.length){
-slideIndex=0;
-}
-
-slides[slideIndex].classList.add("active");
-
-},4000);
-
-
-/* チーム成績 */
-
-const ctx=document.getElementById("teamChart");
-
-new Chart(ctx,{
-type:"bar",
-data:{
-labels:["2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],
-datasets:[
-{
-label:"勝利",
-data:[62,58,59,63,68,60,55,66,56,65]
-},
-{
-label:"敗戦",
-data:[80,82,79,78,73,76,84,69,82,73]
-}
-]
-}
-});
-
-</script>
 
 <script src="script.js"></script>
 </body>
