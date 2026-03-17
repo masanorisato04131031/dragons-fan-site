@@ -228,7 +228,9 @@ renderCalendar();
 };
 
 
-renderCalendar();
+window.onload = function(){
+  renderCalendar();
+};
 
 const games = {
 
