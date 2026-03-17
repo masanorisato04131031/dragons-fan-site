@@ -295,40 +295,29 @@ display:block;
 
 <!-- 2026試合日程 -->
 
-<section id="schedule">
+<section class="calendar-section">
+  <h2>試合日程カレンダー</h2>
 
-<h2>2026年 試合日程</h2>
+  <div class="calendar-header">
+    <button id="prevMonth">前の月</button>
+    <h3 id="monthTitle"></h3>
+    <button id="nextMonth">次の月</button>
+  </div>
 
-<div class="calendar-header">
-
-<button id="prevMonth">前の月</button>
-
-<h3 id="monthTitle"></h3>
-
-<button id="nextMonth">次の月</button>
-
-</div>
-
-<table class="calendar">
-
-<thead>
-
-<tr>
-<th>日</th>
-<th>月</th>
-<th>火</th>
-<th>水</th>
-<th>木</th>
-<th>金</th>
-<th>土</th>
-</tr>
-
-</thead>
-
-<tbody id="calendarBody"></tbody>
-
-</table>
-
+  <table class="calendar">
+    <thead>
+      <tr>
+        <th>日</th>
+        <th>月</th>
+        <th>火</th>
+        <th>水</th>
+        <th>木</th>
+        <th>金</th>
+        <th>土</th>
+      </tr>
+    </thead>
+    <tbody id="calendarBody"></tbody>
+  </table>
 </section>
 
 
@@ -406,7 +395,8 @@ data:[80,82,79,78,73,76,84,69,82,73]
 });
 
 </script>
-<script src="script.js"></script>
+
 </body>
+<script src="script.js"></script>
 </html>
 
