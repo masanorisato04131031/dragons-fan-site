@@ -294,43 +294,30 @@ display:block;
 <!-- 2026試合日程 -->
 
 <section id="schedule">
+<section id="schedule">
+  <h2>2026年 試合日程</h2>
 
-<h2>2026年 試合日程</h2>
+  <div class="calendar-header">
+    <button id="prevMonth">◀ 前の月</button>
+    <h3 id="monthTitle"></h3>
+    <button id="nextMonth">次の月 ▶</button>
+  </div>
 
-<div class="calendar">
-
-<table>
-
-<tr>
-<th>日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th>
-</tr>
-
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td>1<div class="game">vs巨人</div></td>
-<td>2<div class="game">vs巨人</div></td>
-<td>3<div class="game">vs阪神</div></td>
-<td>4<div class="game">vs阪神</div></td>
-</tr>
-
-<tr>
-<td>5<div class="game">vs阪神</div></td>
-<td>6</td>
-<td>7<div class="game">vs広島</div></td>
-<td>8<div class="game">vs広島</div></td>
-<td>9<div class="game">vs広島</div></td>
-<td>10<div class="game">vsヤクルト</div></td>
-<td>11<div class="game">vsヤクルト</div></td>
-</tr>
-
-</table>
-
-</div>
-
+  <table class="calendar">
+    <thead>
+      <tr>
+        <th>日</th>
+        <th>月</th>
+        <th>火</th>
+        <th>水</th>
+        <th>木</th>
+        <th>金</th>
+        <th>土</th>
+      </tr>
+    </thead>
+    <tbody id="calendarBody"></tbody>
+  </table>
 </section>
-
 
 
 <!-- 動画 -->
