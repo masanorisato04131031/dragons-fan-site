@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function(){
 /* =========================
   グラフ（あっても無くてもOK）
 ========================= */
-document.addEventListener("DOMContentLoaded", function(){
+
 
   const ctx = document.getElementById("teamChart");
 
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function(){
 ========================= */
 document.addEventListener("DOMContentLoaded", function(){
 
-  const calendarBody = document.getElementById("calendarBody");
+
   /* =========================
   カレンダー（勝敗＋動画版）
 ========================= */
