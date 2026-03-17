@@ -447,3 +447,25 @@ margin-top:4px;
   color: blue;
   margin-top: 5px;
 }
+
+.game {
+  font-size: 12px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+/* 勝ち */
+.win {
+  color: blue;
+  font-weight: bold;
+}
+
+/* 負け */
+.lose {
+  color: red;
+}
+
+/* 引き分け */
+.draw {
+  color: gray;
+}
