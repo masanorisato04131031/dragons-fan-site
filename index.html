@@ -57,7 +57,7 @@ width:100%;
 height:100%;
 object-fit:cover;
 opacity:0;
-transition:opacity 2s;
+transition:opacity 2s ease-in-out;
 }
 
 .slide.active{
@@ -190,8 +190,6 @@ display:block;
   
 </head>
 
-
-
 <body>
 
 <header>
@@ -199,7 +197,6 @@ display:block;
 <h1>中日ドラゴンズファンサイト</h1>
 
 <nav>
-
 <ul>
 <li><a href="#news">NEWS</a></li>
 <li><a href="#players">選手名鑑</a></li>
@@ -207,31 +204,21 @@ display:block;
 <li><a href="#video">ハイライト</a></li>
 <li><a href="#team">チーム成績</a></li>
 </ul>
-
 </nav>
 
 </header>
 
-
-
-<!-- スライド -->
-
+<!-- スライド（4枚に変更） -->
 <div class="slider">
-
 <img class="slide active" src="stadium1.jpg">
 <img class="slide" src="stadium2.jpg">
 <img class="slide" src="stadium3.jpg">
-
+<img class="slide" src="stadium4.jpg">
 </div>
 
-
-
 <!-- NEWS -->
-
 <section id="news">
-
 <h2>ドラゴンズNEWS</h2>
-
 <div class="news">
 
 <div class="news-card">
@@ -250,17 +237,11 @@ display:block;
 </div>
 
 </div>
-
 </section>
 
-
-
 <!-- 選手 -->
-
 <section id="players">
-
 <h2>選手名鑑</h2>
-
 <div class="players">
 
 <div class="player" onclick="showPlayer('takahashi')">
@@ -284,80 +265,67 @@ display:block;
 </div>
 
 </div>
-
 </section>
 
-
-
-<!-- 2026試合日程 -->
-
+<!-- カレンダー -->
 <section class="calendar-section">
-  <h2>試合日程カレンダー</h2>
+<h2>試合日程カレンダー</h2>
 
-   <div class="highlight">
-  <h2>試合ハイライト</h2>
+<div class="highlight">
+<h2>試合ハイライト</h2>
+<video id="highlightVideo" controls width="100%">
+<source id="videoSource" src="" type="video/mp4">
+</video>
+</div>
 
-  <video id="highlightVideo" controls width="100%">
-    <source id="videoSource" src="" type="video/mp4">
-    動画を再生できません
-  </video>
+<div class="calendar-header">
+<button id="prevMonth">前の月</button>
+<h3 id="monthTitle"></h3>
+<button id="nextMonth">次の月</button>
+</div>
+
+<table class="calendar">
+<thead>
+<tr>
+<th>日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th>
+</tr>
+</thead>
+<tbody id="calendarBody"></tbody>
+</table>
 </section>
-  
-  <div class="calendar-header">
-    <button id="prevMonth">前の月</button>
-    <h3 id="monthTitle"></h3>
-    <button id="nextMonth">次の月</button>
-  </div>
-
-  <table class="calendar">
-    <thead>
-      <tr>
-        <th>日</th>
-        <th>月</th>
-        <th>火</th>
-        <th>水</th>
-        <th>木</th>
-        <th>金</th>
-        <th>土</th>
-      </tr>
-    </thead>
-    <tbody id="calendarBody"></tbody>
-  </table>
-</section>
-
-
 
 <!-- 動画 -->
-
 <section id="video">
-
 <h2>試合ハイライト</h2>
-
 <video controls>
-
 <source src="videoplayback.mp4" type="video/mp4">
-
 </video>
-
 </section>
-
-
 
 <!-- チーム成績 -->
-
 <section id="team">
-
 <h2>チーム成績（過去10年）</h2>
-
 <canvas id="teamChart"></canvas>
-
 </section>
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="script.js"></script>
+
+<!-- ⭐ スライドJS（安全追加） -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+
+  function changeSlide() {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }
+
+  setInterval(changeSlide, 3000);
+});
+</script>
+
 </body>
-
 </html>
-
