@@ -8,169 +8,45 @@
 
 <style>
 
-body{
-margin:0;
-font-family:Arial;
-background:#f4f4f4;
-}
+/* ===== 既存そのまま ===== */
 
-header{
-background:#0046ad;
-color:white;
-text-align:center;
-padding:20px;
-}
-
-nav ul{
-display:flex;
-justify-content:center;
-gap:20px;
-list-style:none;
-padding:0;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-font-weight:bold;
-}
-
-section{
-padding:40px;
-}
-
-h2{
-text-align:center;
-}
+body{margin:0;font-family:Arial;background:#f4f4f4;}
+header{background:#0046ad;color:white;text-align:center;padding:20px;}
+nav ul{display:flex;justify-content:center;gap:20px;list-style:none;padding:0;}
+nav a{color:white;text-decoration:none;font-weight:bold;}
+section{padding:40px;}
+h2{text-align:center;}
 
 /* スライド */
-
-.slider{
-height:450px;
-position:relative;
-overflow:hidden;
-}
-
-.slide{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-opacity:0;
-transition:opacity 2s ease-in-out;
-}
-
-.slide.active{
-opacity:1;
-}
+.slider{height:450px;position:relative;overflow:hidden;}
+.slide{position:absolute;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 2s;}
+.slide.active{opacity:1;}
 
 /* NEWS */
-
-.news{
-display:flex;
-gap:20px;
-justify-content:center;
-flex-wrap:wrap;
-}
-
-.news-card{
-background:white;
-padding:20px;
-border-radius:10px;
-width:250px;
-}
+.news{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;}
+.news-card{background:white;padding:20px;border-radius:10px;width:250px;}
 
 /* 選手 */
-
-.players{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-max-width:1000px;
-margin:auto;
-}
-
-.player{
-text-align:center;
-cursor:pointer;
-}
-
-.player img{
-width:100%;
-border-radius:10px;
-}
+.players{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:1000px;margin:auto;}
+.player{text-align:center;cursor:pointer;}
+.player img{width:100%;border-radius:10px;}
 
 /* モーダル */
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);}
+.modal-content{background:white;width:90%;max-width:700px;margin:80px auto;padding:20px;border-radius:10px;}
+.close{float:right;font-size:30px;cursor:pointer;}
 
-.modal{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.7);
-}
-
-.modal-content{
-background:white;
-width:90%;
-max-width:700px;
-margin:80px auto;
-padding:20px;
-border-radius:10px;
-}
-
-.close{
-float:right;
-font-size:30px;
-cursor:pointer;
-}
-
-table{
-width:100%;
-border-collapse:collapse;
-margin-top:20px;
-}
-
-th,td{
-border:1px solid #ccc;
-padding:8px;
-text-align:center;
-}
+table{width:100%;border-collapse:collapse;margin-top:20px;}
+th,td{border:1px solid #ccc;padding:8px;text-align:center;}
 
 /* 動画 */
-
-video{
-width:80%;
-max-width:800px;
-display:block;
-margin:auto;
-}
+video{width:80%;max-width:800px;display:block;margin:auto;}
 
 /* カレンダー */
-
-.calendar{
-max-width:900px;
-margin:auto;
-background:white;
-padding:20px;
-border-radius:10px;
-}
-
-.calendar table{
-width:100%;
-}
-
-.calendar th{
-background:#0046ad;
-color:white;
-}
-
-.calendar td{
-height:80px;
-vertical-align:top;
-}
+.calendar{max-width:900px;margin:auto;background:white;padding:20px;border-radius:10px;}
+.calendar table{width:100%;}
+.calendar th{background:#0046ad;color:white;}
+.calendar td{height:90px;vertical-align:top;}
 
 .game{
 font-size:12px;
@@ -178,24 +54,18 @@ background:#e6f0ff;
 padding:3px;
 margin-top:4px;
 border-radius:3px;
+cursor:pointer;
 }
 
-canvas{
-max-width:800px;
-margin:auto;
-display:block;
-}
+canvas{max-width:800px;margin:auto;display:block;}
 
 </style>
-  
 </head>
 
 <body>
 
 <header>
-
 <h1>中日ドラゴンズファンサイト</h1>
-
 <nav>
 <ul>
 <li><a href="#news">NEWS</a></li>
@@ -205,10 +75,9 @@ display:block;
 <li><a href="#team">チーム成績</a></li>
 </ul>
 </nav>
-
 </header>
 
-<!-- スライド（4枚に変更） -->
+<!-- スライド -->
 <div class="slider">
 <img class="slide active" src="stadium1.jpg">
 <img class="slide" src="stadium2.jpg">
@@ -220,22 +89,9 @@ display:block;
 <section id="news">
 <h2>ドラゴンズNEWS</h2>
 <div class="news">
-
-<div class="news-card">
-<h3>高橋宏斗 好投</h3>
-<p>7回無失点の好投</p>
-</div>
-
-<div class="news-card">
-<h3>岡林 猛打賞</h3>
-<p>リードオフマンが躍動</p>
-</div>
-
-<div class="news-card">
-<h3>石川昂弥 ホームラン</h3>
-<p>主砲が決勝弾</p>
-</div>
-
+<div class="news-card"><h3>高橋宏斗 好投</h3><p>7回無失点の好投</p></div>
+<div class="news-card"><h3>岡林 猛打賞</h3><p>リードオフマンが躍動</p></div>
+<div class="news-card"><h3>石川昂弥 ホームラン</h3><p>主砲が決勝弾</p></div>
 </div>
 </section>
 
@@ -243,48 +99,32 @@ display:block;
 <section id="players">
 <h2>選手名鑑</h2>
 <div class="players">
-
-<div class="player" onclick="showPlayer('takahashi')">
-<img src="takahashi.jpeg">
-<p>高橋宏斗</p>
-</div>
-
-<div class="player" onclick="showPlayer('yanagi')">
-<img src="yanagi.jpeg">
-<p>柳裕也</p>
-</div>
-
-<div class="player" onclick="showPlayer('okabayashi')">
-<img src="okabayashi.jpg">
-<p>岡林勇希</p>
-</div>
-
-<div class="player" onclick="showPlayer('ishikawa')">
-<img src="ishikawa.jpg">
-<p>石川昂弥</p>
-</div>
-
+<div class="player"><img src="takahashi.jpeg"><p>高橋宏斗</p></div>
+<div class="player"><img src="yanagi.jpeg"><p>柳裕也</p></div>
+<div class="player"><img src="okabayashi.jpg"><p>岡林勇希</p></div>
+<div class="player"><img src="ishikawa.jpg"><p>石川昂弥</p></div>
 </div>
 </section>
 
 <!-- カレンダー -->
-<section class="calendar-section">
+<section id="schedule">
 <h2>試合日程カレンダー</h2>
 
 <div class="highlight">
 <h2>試合ハイライト</h2>
-<video id="highlightVideo" controls width="100%">
-<source id="videoSource" src="" type="video/mp4">
+<video id="highlightVideo" controls>
+<source id="videoSource" src="videoplayback.mp4" type="video/mp4">
 </video>
 </div>
 
-<div class="calendar-header">
+<div style="text-align:center;">
 <button id="prevMonth">前の月</button>
-<h3 id="monthTitle"></h3>
+<span id="monthTitle"></span>
 <button id="nextMonth">次の月</button>
 </div>
 
-<table class="calendar">
+<div class="calendar">
+<table>
 <thead>
 <tr>
 <th>日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th>
@@ -292,6 +132,7 @@ display:block;
 </thead>
 <tbody id="calendarBody"></tbody>
 </table>
+</div>
 </section>
 
 <!-- 動画 -->
@@ -309,22 +150,87 @@ display:block;
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="script.js"></script>
 
-<!-- ⭐ スライドJS（安全追加） -->
+<!-- ⭐ スライド -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  const slides = document.querySelectorAll('.slide');
-  let current = 0;
-
-  function changeSlide() {
-    slides[current].classList.remove('active');
-    current = (current + 1) % slides.length;
-    slides[current].classList.add('active');
-  }
-
-  setInterval(changeSlide, 3000);
+const slides=document.querySelectorAll('.slide');
+let current=0;
+setInterval(()=>{
+slides[current].classList.remove('active');
+current=(current+1)%slides.length;
+slides[current].classList.add('active');
+},3000);
 });
+</script>
+
+<!-- ⭐ カレンダー（試合付き） -->
+<script>
+const games={
+"2026-04-03":"vs 阪神",
+"2026-04-04":"vs 阪神",
+"2026-04-05":"vs 阪神",
+"2026-04-10":"vs 巨人",
+"2026-04-15":"vs 広島",
+"2026-05-20":"vs ソフトバンク（交流戦）",
+"2026-05-21":"vs ソフトバンク（交流戦）",
+"2026-06-05":"vs 日本ハム（交流戦）",
+"2026-06-10":"vs ロッテ（交流戦）"
+};
+
+let date=new Date();
+
+function renderCalendar(){
+const year=date.getFullYear();
+const month=date.getMonth();
+
+document.getElementById("monthTitle").innerText=year+"年 "+(month+1)+"月";
+
+const firstDay=new Date(year,month,1).getDay();
+const lastDate=new Date(year,month+1,0).getDate();
+
+let html="";
+let day=1;
+
+for(let i=0;i<6;i++){
+html+="<tr>";
+for(let j=0;j<7;j++){
+if(i===0 && j<firstDay || day>lastDate){
+html+="<td></td>";
+}else{
+let fullDate=`${year}-${String(month+1).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
+html+="<td>"+day;
+
+if(games[fullDate]){
+html+=`<div class="game" onclick="changeVideo()">${games[fullDate]}</div>`;
+}
+
+html+="</td>";
+day++;
+}
+}
+html+="</tr>";
+}
+
+document.getElementById("calendarBody").innerHTML=html;
+}
+
+function changeVideo(){
+document.getElementById("videoSource").src="videoplayback.mp4";
+document.getElementById("highlightVideo").load();
+}
+
+document.getElementById("prevMonth").onclick=()=>{
+date.setMonth(date.getMonth()-1);
+renderCalendar();
+};
+
+document.getElementById("nextMonth").onclick=()=>{
+date.setMonth(date.getMonth()+1);
+renderCalendar();
+};
+
+renderCalendar();
 </script>
 
 </body>
