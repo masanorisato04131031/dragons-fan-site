@@ -8,8 +8,6 @@
 
 <style>
 
-/* ===== 既存そのまま ===== */
-
 body{margin:0;font-family:Arial;background:#f4f4f4;}
 header{background:#0046ad;color:white;text-align:center;padding:20px;}
 nav ul{display:flex;justify-content:center;gap:20px;list-style:none;padding:0;}
@@ -106,16 +104,9 @@ canvas{max-width:800px;margin:auto;display:block;}
 </div>
 </section>
 
-<!-- カレンダー -->
+<!-- カレンダー（※上の動画削除済み） -->
 <section id="schedule">
 <h2>試合日程カレンダー</h2>
-
-<div class="highlight">
-<h2>試合ハイライト</h2>
-<video id="highlightVideo" controls>
-<source id="videoSource" src="videoplayback.mp4" type="video/mp4">
-</video>
-</div>
 
 <div style="text-align:center;">
 <button id="prevMonth">前の月</button>
@@ -135,11 +126,11 @@ canvas{max-width:800px;margin:auto;display:block;}
 </div>
 </section>
 
-<!-- 動画 -->
+<!-- 動画（ここだけ残す） -->
 <section id="video">
 <h2>試合ハイライト</h2>
-<video controls>
-<source src="videoplayback.mp4" type="video/mp4">
+<video id="highlightVideo" controls>
+<source id="videoSource" src="videoplayback.mp4" type="video/mp4">
 </video>
 </section>
 
@@ -151,7 +142,7 @@ canvas{max-width:800px;margin:auto;display:block;}
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<!-- ⭐ スライド -->
+<!-- スライド -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 const slides=document.querySelectorAll('.slide');
@@ -164,7 +155,7 @@ slides[current].classList.add('active');
 });
 </script>
 
-<!-- ⭐ カレンダー（試合付き） -->
+<!-- カレンダー -->
 <script>
 const games={
 "2026-04-03":"vs 阪神",
